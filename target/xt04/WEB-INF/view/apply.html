@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/js.cookie.js"></script>
+    <script src="/js/routine.js"></script>
+</head>
+
+<body onload="getApList(1)">
+    <div class="container-fluid">
+        <div class="header">
+            <span class="lefttitle">欢迎进入湖中大校园网后台管理系统</span>
+            <a class="righttitle" style="height: 30px;width: 30px;" href="/logout" onClick="return confirm('您确认要退出吗？')"><img src="./img/exit.png"  style="height: 100%;width: 100%;" alt=""></a>
+            <span class="righttitle">你好, haha——你的身份是：超级管理员</span>
+        </div>
+        <div>
+            <div class="leftframe row col-lg-2 col-xs-2 col-sm-2 col-md-2">
+                <br/>
+                <table style="margin: 100px auto;">
+                    <tbody>
+                    <tr class="leftitem"><td><a style="color: white" href="/apply">申请情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/maintain">报修情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/setting">系统设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/person">个人设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/adminmng">管理员列表</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mainframe row col-lg-offset-2 col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+                <br/>
+                <h1>校园网申请列表</h1>
+
+                <hr size="1" width="100%">
+                <div class="row col-lg-12 col-xs-12 col-sm-12 col-md-12" style="margin-bottom: 30px; height:auto;">
+                    <fieldset style="width: 100%;">
+                        <legend style="margin-bottom:10px;">今日名单</legend>
+                        <p class="tototal"></p>
+                        <table style="width: 100%; border: 1px solid #b2b2b2">
+                            <thead class="toapplylist"></thead>
+                        </table>
+                    </fieldset>
+                </div>
+
+                <hr size="1" width="100%">
+                <div class="row col-lg-12 col-xs-12 col-sm-12 col-md-12" style="margin-bottom: 30px; height:auto;">
+                    <fieldset style="width: 100%;">
+                        <legend style="margin-bottom:10px;">全部名单</legend>
+                        <p class="total"></p>
+                        <table style="width: 100%; border: 1px solid #b2b2b2">
+                            <thead class="applylist"></thead>
+                        </table>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

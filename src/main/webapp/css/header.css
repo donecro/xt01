@@ -1,0 +1,37 @@
+.header{
+	width: 100%;
+	height: auto;
+	background-color: #B5D7AF;
+   	position: fixed;
+    z-index: 1;
+}
+
+
+
+.lefttitle{
+	float: left;
+	font-size: 20px;
+	color: white;
+	font-weight: 600;
+}
+
+.righttitle{
+	float: right;
+	margin-right: 30px;
+	font-size: 20px;
+	color: white;
+	font-weight: 600;
+}
+
+.leftframe{
+	position: fixed;
+	height: 100%;
+	background-color: #B5D7AF;
+}
+
+.leftitem{
+	height: 30px;
+	margin:50px auto;
+	text-align: center;
+	font-size: 18px;
+}

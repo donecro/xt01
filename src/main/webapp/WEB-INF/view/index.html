@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/js.cookie.js"></script>
+    <script src="/js/routine.js"></script>
+</head>
+
+<body style="margin: 0px; background-color: #B5D7AF;">
+    <div class="container-fluid">
+        <div class="indextitle">
+            <span style="color: white">湖中大校园网后台管理系统</span>
+        </div>
+        <form class="indexform">
+            <br />
+            <div class="tx">
+                <label>账号：</label><br />
+            </div>
+            <input class="indexinput" type="text" id="account" name="account" required="required" pattern="^[a-zA-Z0-9]\w{3,19}$" placeholder="请输入账号" oninvalid="setCustomValidity('6~20字母数字或下划线')" oninput="setCustomValidity('')">
+
+            <div class="tx">
+                <label>密码：</label><br />
+            </div>
+            <input class="indexinput" type="password" id="password" name="password" required="required" pattern="^[a-zA-Z0-9]\w{3,19}$" placeholder="请输入密码" oninvalid="setCustomValidity('6~20字母数字或下划线')" oninput="setCustomValidity('')">
+
+            <button class="indexbtn" type="button" onclick="login();">登录</button>
+            <br/>
+        </form>
+    </div>
+</body>
+</html>
+
+

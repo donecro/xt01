@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/js.cookie.js"></script>
+    <script src="/js/routine.js"></script>
+    <script src="/layer/layer.js"></script>
+</head>
+
+<body onload="getSetting()">
+    <div class="container-fluid">
+        <div style="margin: 0">
+            <br/>
+            <h1>系统管理</h1>
+            <hr size="1" width="100%">
+            <form style="margin-top:10px;border:2px solid #99968A;border-radius: 10px;width: 370px;height: 250px;" action="/setadminpwd" method="post">
+                <p>
+                    <label style="margin: 20px auto auto 30px;">请输入新业务类型名称: </label><br/>
+                    <input class="personinput" type="text" name="newpassword" id="bst">
+                <p>
+                <p>
+                    <label style="margin-left: 30px">	价格(元/月): </label><br/>
+                    <input class="personinput" type="number" name="newpassword" id="mprice" >
+                </p>
+                <p>
+                    <label style="margin-left: 30px">	价格(元/季度): </label><br/>
+                    <input class="personinput" type="number" name="newpassword" id="qprice">
+
+                </p>
+                <p>
+                    <label style="margin-left: 30px">	价格(元/学期): </label><br/>
+                    <input class="personinput" type="number" name="newpassword" id="sprice">
+
+                </p>
+                <p>
+                    <label style="margin-left: 30px">	价格(元/学年): </label><br/>
+                    <input class="personinput" type="number" name="newpassword" id="yprice">
+
+                </p>
+                <p>
+                    <button class="button1" type="submit" value="Submit">更改</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xt01.dao.AdminDao">
+
+    <resultMap id="AdminResultMap" type="com.xt01.entity.Admin">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="account" column="account" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="power" column="power" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="CheckLogin" parameterType="com.xt01.dto.Login" resultType="java.lang.Integer">
+        select id from admin where account like (#{login.account}) and password like (#{login.password})
+    </select>
+
+    <select id="getAdminByLoginId" parameterType="java.lang.Integer" resultMap="AdminResultMap" resultType="com.xt01.entity.Admin">
+        select id, account, username ,power from admin where id = #{id}
+    </select>
+
+    <select id="QueryAll" resultMap="AdminResultMap" resultType="com.xt01.entity.Admin">
+        select id,account,username,password,power from admin
+    </select>
+    <insert id="Add">
+        <!--ignore 主键冲突，报错-->
+        insert
+               ignore
+        into
+               admin(account,username,password,power)
+        values
+               (#{account},#{username},#{password},#{power})
+    </insert>
+    <delete id="Delete" parameterType="java.lang.Integer">
+        delete from admin where id = #{id}
+    </delete>
+    <update id="UpdateUsername" parameterType="java.lang.Integer" >
+        update admin set username = #{username} where id = #{id}
+    </update>
+    <update id="UpdatePwd" parameterType="java.lang.Integer" >
+        update admin set password = #{pwd} where id = #{id}
+    </update>
+    <update id="UpdatePower" parameterType="java.lang.Integer" >
+        update admin set power = #{power} where id = #{id}
+    </update>
+
+</mapper>
+

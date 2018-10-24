@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/js.cookie.js"></script>
+    <script src="/js/routine.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <span class="lefttitle">欢迎进入湖中大校园网后台管理系统</span>
+            <a class="righttitle" style="height: 30px;width: 30px;" href="/logout" onClick="return confirm('您确认要退出吗？')"><img src="./img/exit.png"  style="height: 100%;width: 100%;" alt=""></a>
+            <span class="righttitle">你好, haha——你的身份是：超级管理员</span>
+
+        </div>
+        <div>
+            <div class="leftframe row col-lg-2 col-xs-2 col-sm-2 col-md-2">
+                <br/>
+                <table style="margin: 100px auto;">
+                    <tbody>
+                    <tr class="leftitem"><td><a style="color: white" href="/apply">申请情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/maintain">报修情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/setting">系统设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/person">个人设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/adminmng">管理员列表</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mainframe row col-lg-offset-2 col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+                <br/>
+                <h1>个人设置</h1>
+                <hr size="1" width="100%">
+
+                <div style="width:370px; height:450px;font-size: 20px;margin:0px auto;">
+                    <p/>
+                    <p>
+                        <span style="margin-left: 30px;font-weight: 700">你的账号为：${account}</span><br/>
+                        <span style="margin-left: 30px;font-weight: 700">你当前用户名为：${username}</span><br/>
+                    </p>
+                    <form style="border:2px solid #99968A;border-radius: 10px;width: 370px;height: 150px;" action="/setadminname" method="post">
+                        <p>
+                            <label style="margin: 20px auto auto 30px;">请输入你的新用户名: </label><br/>
+                            <input style="margin-left: 30px;width: 300px;height: 30px; font-size: 20px; text-align: center;" type="text" name="newusername"  required="required" pattern="^[a-zA-Z0-9]\w{3,30}$" oninvalid="setCustomValidity('3~30字母数字或下划线')" oninput="setCustomValidity('')"/><br />
+                        </p>
+                        <p>
+                            <button class="button1" type="submit" value="Submit">更改</button>
+                        </p>
+                    </form>
+                    <form style="margin-top:10px;border:2px solid #99968A;border-radius: 10px;width: 370px;height: 250px;" action="/setadminpwd" method="post">
+                        <p>
+                            <label style="margin: 20px auto auto 30px;">请输入你的新密码: </label><br/>
+                            <input class="personinput" type="password" name="newpassword" id="pw1" required="required" pattern="^[a-zA-Z0-9]\w{6,20}$" oninvalid="setCustomValidity('6~20字母数字或下划线')" oninput="setCustomValidity('')">
+                        <p>
+                        <p>
+                            <label style="margin-left: 30px">请再次输入你的新密码: </label><br/>
+                            <input class="personinput" type="password" name="newpassword" id="pw2" onkeyup="validate()" required="required" pattern="^[a-zA-Z0-9]\w{6,20}$" oninvalid="setCustomValidity('6~20字母数字或下划线')" oninput="setCustomValidity('')">
+                            <span  style="margin-left: 30px" id="tishi"></span>
+                        </p>
+                        <p>
+                            <button class="button1" type="submit" value="Submit">更改</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

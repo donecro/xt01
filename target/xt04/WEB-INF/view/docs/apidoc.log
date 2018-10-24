@@ -1,0 +1,62 @@
+十月 21, 2018 3:26:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: project type not set, try to figure out...
+十月 21, 2018 3:26:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start find controllers in path : C:\Users\Donecro\Documents\微信公众号需求\xt01\src\main\java\
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : AdminController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : ApplyController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : ExcelController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : IndexController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : MaintainController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : NotifyController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : SettingController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : ViewController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: find controller file : WeChatOrderController.java
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: generate api docs start...
+十月 21, 2018 3:26:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : AdminController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to generate docs for controller file : AdminController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: success to generate docs for controller file : AdminController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : ApplyController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to generate docs for controller file : ApplyController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: success to generate docs for controller file : ApplyController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : ExcelController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : IndexController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : MaintainController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : NotifyController.java
+十月 21, 2018 3:26:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : SettingController.java
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to generate docs for controller file : SettingController.java
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: success to generate docs for controller file : SettingController.java
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : ViewController.java
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to generate docs for controller file : ViewController.java
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: success to generate docs for controller file : ViewController.java
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: start to parse controller file : WeChatOrderController.java
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: generate api docs done !!!
+十月 21, 2018 3:26:05 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: docs config properties miss, we don't think you want to post to rap!

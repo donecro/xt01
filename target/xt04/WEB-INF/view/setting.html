@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/js.cookie.js"></script>
+    <script src="/js/routine.js"></script>
+    <script src="/layer/layer.js"></script>
+</head>
+
+<body onload="getSetting()">
+    <div class="container-fluid">
+        <div class="header">
+            <span class="lefttitle">欢迎进入湖中大校园网后台管理系统</span>
+            <a class="righttitle" style="height: 30px;width: 30px;" href="/logout" onClick="return confirm('您确认要退出吗？')"><img src="./img/exit.png"  style="height: 100%;width: 100%;" alt=""></a>
+            <span class="righttitle">你好, haha——你的身份是：超级管理员</span>
+
+        </div>
+        <div>
+            <div class="leftframe row col-lg-2 col-xs-2 col-sm-2 col-md-2">
+                <br/>
+                <table style="margin: 100px auto;">
+                    <tbody>
+                    <tr class="leftitem"><td><a style="color: white" href="/apply">申请情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/maintain">报修情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/setting">系统设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/person">个人设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/adminmng">管理员列表</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mainframe row col-lg-offset-2 col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+                <br/>
+                <h1>系统管理</h1>
+                <hr size="1" width="100%">
+
+                <!--学生验证信息数据-->
+                <div class="row col-lg-12 col-xs-12 col-sm-12 col-md-12" style="height:auto;margin-bottom: 10px;">
+                    <fieldset>
+                        <legend style="margin-bottom:10px;">学生验证信息数据</legend>
+                        <form class="row col-lg-6 col-xs-6 col-sm-6 col-md-6" action="/excel/upload" method="post" enctype="multipart/form-data">
+                            <span style="float: left; margin-left: 10px;">选择文件:</span>
+                            <input style="float: left; margin-left: 10px;background-color:#B5D7AF;border: 0px;border-radius: 10%" type="file" name="upfile" width="120px"/>
+                            <input style="float: left; margin-left: 10px;background-color:#B5D7AF;border: 0px;order-radius: 10%" type="submit" value="上传"/>
+                            <br/>
+                        </form>
+                        <div class="row col-lg-6 col-xs-6 col-sm-6 col-md-6">
+                            <a style="float: right; margin-right: 10px;" href="/idenclear" onClick="return confirm('您确认要清空学生信息吗？')">清空学生信息</a>
+                            <a style="float: right; margin-right: 10px;" href="/excel/identity/export">导出</a>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <hr size="1" width="100%">
+
+                <!--校园网介绍-->
+                <div class="row col-lg-4 col-xs-4 col-sm-4 col-md-4" style="height:auto;">
+                    <fieldset style="width: 98%; margin: 3px auto;">
+                        <legend style="margin-bottom:10px;">校园网介绍</legend>
+                        <form style="width: 100%; margin: 0px auto; height: 220px;" action="/introset" method="post">
+                            <div>
+                                <textarea type="text" name="intro" class="intro" placeholder="" clos=",30" rows="5" warp="virtual" style="height: 180px;width: 100%;"></textarea>
+                            </div>
+                            <div>
+                                <button style="float: right; margin-right: 10px; border-radius: 3px; border: 0px;background-color:#B5D7AF;" type="submit">更改</button>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+
+                <!--申请须知-->
+                <div class="row col-lg-4 col-xs-4 col-sm-4 col-md-4" style="height:auto;">
+                    <fieldset style="width: 98%; margin: 3px auto;">
+                        <legend style="margin-bottom:10px;">申请须知</legend>
+                        <form style="width: 100%; margin: 0px auto;height: 220px;" action="/ainforset" method="post">
+                            <div>
+                                <textarea type="text" name="ainfor" class="ainfor" placeholder="" clos=",30" rows="5" warp="virtual" style="height: 180px;width: 100%;"></textarea>
+                            </div>
+                            <div>
+                                <button style="float: right;margin-right: 10px; border-radius: 3px; border: 0px;background-color:#B5D7AF;" type="submit">更改</button>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+
+                <!--报修介绍-->
+                <div class="row col-lg-4 col-xs-4 col-sm-4 col-md-4" style="height:auto;">
+                    <fieldset style="width: 98%; margin: 3px auto;">
+                        <legend style="margin-bottom:10px;">报修介绍</legend>
+                        <form style="width: 100%; margin: 0px auto;height: 220px;" action="/minforset" method="post">
+                            <div>
+                                <textarea type="text" name="minfor" class="minfor" placeholder="" clos=",30" rows="5" warp="virtual" style="height: 180px;width: 100%;"></textarea>
+                            </div>
+                            <div>
+                                <button style="float: right;margin-right: 10px; border-radius: 3px; border: 0px;background-color:#B5D7AF;" type="submit">更改</button>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+
+                <hr size="1" width="100%">
+
+                <!--用户组管理-->
+                <div class="row col-lg-6 col-xs-6 col-sm-6 col-md-6" style="height:auto;">
+                    <fieldset style="width: 96%;">
+                        <legend style="margin-bottom:10px;">用户组管理</legend>
+                        <table style="width: 100%;border: 1px solid #b2b2b2">
+                            <thead class="uglist"></thead>
+                        </table>
+                    </fieldset>
+                    <button class="row col-lg-offset-10 col-xs-offset-10 col-sm-offset-10 col-lg-offset-10" style="margin-top: 10px; border-radius: 3px; border: 0px;background-color:#B5D7AF;" onclick="addframe(1)">添加</button>
+                </div>
+
+                <!--宿舍地址管理-->
+                <div class="row col-lg-6 col-xs-6 col-sm-6 col-md-6" style="height:auto;">
+                    <fieldset style="width: 94%;">
+                        <legend style="margin-bottom:10px;">宿舍地址管理</legend>
+                        <table style="width: 100%;border: 1px solid #b2b2b2">
+                            <thead class="adlist"></thead>
+
+                        </table>
+                    </fieldset>
+                    <button class="row col-lg-offset-10 col-xs-offset-10 col-sm-offset-10 col-lg-offset-10" style="margin-top: 10px; border-radius: 3px; border: 0px;background-color:#B5D7AF;" onclick="addframe(2)">添加</button>
+
+                </div>
+
+
+                <!--业务类型管理-->
+                <div class="row col-lg-12 col-xs-12 col-sm-12 col-md-12" style="margin-bottom: 30px; height:auto;">
+                    <fieldset style="width: 94%;">
+                        <legend style="margin-bottom:10px;">业务类型管理</legend>
+                        <table style="width: 100%; border: 1px solid #b2b2b2">
+                            <thead class="btlist"></thead>
+                        </table>
+                    </fieldset>
+                    <button class="row col-lg-offset-10 col-xs-offset-10 col-sm-offset-10 col-lg-offset-10" style="margin-top: 10px; border-radius: 3px; border: 0px;background-color:#B5D7AF;" onclick="addframe(3)">添加</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xt01.dao.ApplyDao">
+
+    <insert id="Add">
+        <!--ignore 主键冲突，报错-->
+        insert
+               ignore
+        into
+               apply (username,sex,uid,callnum,usergroup,address,bst,forlong,identitynum,password,applytime,pay)
+        values
+               (#{username},#{sex},#{uid},#{callnum},#{usergroup},#{address},#{businesstype},#{forlong},#{identity},#{acode},#{password},#{applytime},#{pay})
+    </insert>
+
+    <resultMap id="ApplyResult" type="com.xt01.entity.Apply">
+        <id property="rid" column="rid" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="uid" column="uid" jdbcType="INTEGER"/>
+        <result property="callnum" column="callnum" jdbcType="INTEGER"/>
+        <result property="usergroup" column="usergroup" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="businesstype" column="bst" jdbcType="VARCHAR"/>
+        <result property="forlong" column="forlong" jdbcType="INTEGER"/>
+        <result property="identity" column="identitynum" jdbcType="VARCHAR"/>
+        <result property="applytime" column="applytime" jdbcType="TIMESTAMP"/>
+        <result property="pay" column="pay" jdbcType="DOUBLE"/>
+    </resultMap>
+
+    <select id="queryAll" resultMap="ApplyResult" resultType="com.xt01.entity.Apply">
+        select
+               rid,username,sex,uid,callnum,usergroup,address,bst,forlong,identitynum,password,applytime,pay
+        from
+               apply
+    </select>
+
+
+    <select id="queryByUN" resultMap="ApplyResult" resultType="com.xt01.entity.Apply">
+        select
+            rid,username,sex,uid,callnum,usergroup,address,bst,forlong,identitynum,password,applytime,pay
+        from
+            apply
+        where
+            username = (#{username})
+    </select>
+
+    <select id="queryByToday" resultMap="ApplyResult" resultType="com.xt01.entity.Apply">
+        select
+            rid,username,sex,uid,callnum,usergroup,address,bst,forlong,identitynum,password,applytime,pay
+        from
+            apply
+        where
+               DATE_FORMAT(applytime,'%Y-%m-%d') = DATE_FORMAT(#{today},'%Y-%m-%d')
+    </select>
+
+    <select id="queryByDate" resultMap="ApplyResult" resultType="com.xt01.entity.Apply">
+        select
+            rid,username,sex,uid,callnum,usergroup,address,bst,forlong,identitynum,password,applytime,pay
+        from
+            apply
+        where
+               DATE_FORMAT(applytime,'%Y-%m-%d %H:%i') between DATE_FORMAT(#{start},'%Y-%m-%d %H:%i') and DATE_FORMAT(#{end},'%Y-%m-%d %H:%i')
+    </select>
+
+
+
+
+    <!--List<Apply> queryByPage(int page);-->
+    <select id="queryByPage" resultMap="ApplyResult" resultType="com.xt01.entity.Apply">
+        select
+            rid,username,sex,uid,callnum,usergroup,address,bst,forlong,identitynum,password,applytime,pay
+        from
+            apply
+        limit
+            #{page},#{count}
+    </select>
+
+    <!--int queryCount()-->
+    <select id="queryCount" resultType="java.lang.Integer">
+        select
+            count(*)
+        from
+            apply
+    </select>
+
+    <!--List<Apply> queryToByPage(int page);-->
+    <select id="queryToByPage" resultMap="ApplyResult" resultType="com.xt01.entity.Apply">
+        select
+            rid,username,sex,uid,callnum,usergroup,address,bst,forlong,identitynum,password,applytime,pay
+        from
+            apply
+        where
+            DATE_FORMAT(applytime,'%Y-%m-%d') = DATE_FORMAT(#{today},'%Y-%m-%d')
+        limit
+            #{page},#{count}
+    </select>
+
+    <!--int queryToCount()-->
+    <select id="queryToCount" resultType="java.lang.Integer">
+        select
+            count(*)
+        from
+            apply
+        where
+            DATE_FORMAT(applytime,'%Y-%m-%d') = DATE_FORMAT(#{today},'%Y-%m-%d')
+    </select>
+
+
+
+
+    <!--DoCheck-->
+    <!--public int CheckUIdHadApplyExist(long uid);-->
+    <select id="CheckUIdHadApplyExist" resultType="int">
+        select
+               count(*)
+        from
+               apply
+        where
+               uid = #{uid}
+    </select>
+
+    <!--public int CheckUIdExist(long uid);-->
+    <select id="CheckUIdExist" resultType="int">
+        select
+               count(*)
+        from
+               identitycheck
+        where
+               uid = #{uid}
+    </select>
+
+    <!--public long DoCheckGetIdentity(long uid);-->
+    <select id="DoCheckGetIdentity" resultType="java.lang.String" parameterType="java.lang.Long">
+        select
+               identity
+        from
+               identitycheck
+        where
+               uid = #{uid}
+    </select>
+
+    <insert id="InsertIdentityExcel">
+        <!--ignore 主键冲突，报错-->
+        insert
+        ignore
+        into
+        identitycheck(uid, username, over, sex, email, identity, callnum, address)
+        values
+        (#{uid},#{username},#{over},#{sex},#{email},#{identity},#{callnum},#{address})
+    </insert>
+
+
+    <!--List<Identity> IdentityqueryAll() throws Exception;-->
+    <resultMap id="IdentityResult" type="com.xt01.entity.Identity">
+        <result property="uid" column="uid" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="over" column="over" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="identity" column="identity" jdbcType="VARCHAR"/>
+        <result property="callnum" column="callnum" jdbcType="INTEGER"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="IdentityqueryAll" resultMap="IdentityResult" resultType="com.xt01.entity.Identity">
+        select
+               uid,username,over,sex,email,identity,callnum,address
+        from
+               identitycheck
+    </select>
+
+    <!--int IdClear() throws Exception;-->
+    <delete id="IdClear">
+        delete from
+            identitycheck
+    </delete>
+
+
+
+
+
+
+
+
+</mapper>

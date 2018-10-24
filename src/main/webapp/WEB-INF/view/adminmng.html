@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/js.cookie.js"></script>
+    <script src="/js/routine.js"></script>
+</head>
+
+<body onload="getAdminMng()">
+    <div class="container-fluid">
+        <div class="header">
+            <span class="lefttitle">欢迎进入湖中大校园网后台管理系统</span>
+            <a class="righttitle" style="height: 30px;width: 30px;" href="/logout" onClick="return confirm('您确认要退出吗？')"><img src="./img/exit.png"  style="height: 100%;width: 100%;" alt=""></a>
+            <span class="righttitle">你好, haha——你的身份是：超级管理员</span>
+
+        </div>
+        <div>
+            <div class="leftframe row col-lg-2 col-xs-2 col-sm-2 col-md-2">
+                <br/>
+                <table style="margin: 100px auto;">
+                    <tbody>
+                    <tr class="leftitem"><td><a style="color: white" href="/apply">申请情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/maintain">报修情况</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/setting">系统设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/person">个人设置</a></td></tr>
+                    <tr class="leftitem"><td><a style="color: white" href="/adminmng">管理员列表</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mainframe row col-lg-offset-2 col-xs-offset-2 col-sm-offset-2 col-md-offset-2">
+                <br/>
+                <h1>管理员管理</h1>
+                <hr size="1" width="100%">
+                <div class="row col-lg-offset-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1
+                                col-lg-10 col-xs-10 col-sm-10 col-md-10" style="height:auto;">
+                    <fieldset>
+                        <legend style="margin-bottom:10px;">管理员添加</legend>
+                        <div >
+                            <a href="javascript:;" onclick="showLayer()">添加管理员入口</a>
+                        </div>
+                    </fieldset>
+                </div>
+                <form style="font-size: 20px; display: none;position:absolute;" id="layer" action="/addadmin" method="post">
+                    <p style="margin-left: 30px;font-size: 22px;font-weight: 700">管理员添加</p>
+                    <p>
+                        <label style="margin-left: 30px">账  号: </label><br/>
+                        <input style="margin-left: 30px;width: 300px;height: 30px; font-size: 20px; " type="text" name="newaccount" />
+                    </p>
+                    <p>
+                        <label style="margin-left: 30px">用户名: </label><br/>
+                        <input style="margin-left: 30px;width: 300px;height: 30px; font-size: 20px; " type="text" name="newusername" />
+                    </p>
+                    <p>
+                        <label style="margin-left: 30px">密  码: </label><br/>
+                        <input style="margin-left: 30px;width: 300px;height: 30px; font-size: 20px; " type="password" name="newpassword" />
+                    <p>
+
+                    <p>
+                        <label style="margin-left: 30px">权  限: </label><br/>
+                        <input style="margin-left: 30px; margin-right: 20px;" type="radio" value="40002" name="newpower">普通管理员</input>
+                        <input type="radio" value="40001" name="newpower">超级管理员</input>
+
+                    </p>
+
+                    <input style="margin-left: 60px; margin-right: 60px; width: 90px;height: 30px;" type="button" onclick="hideLayer()" value="取消">
+                    <input style="margin-left: auto; margin-right: auto; width: 90px;height: 30px;" type="submit" value=" 添 加 " />
+                    </p>
+
+                </form>
+
+                <hr size="1" width="100%">
+                <div class="row col-lg-12 col-xs-12 col-sm-12 col-md-12" style="margin-bottom: 30px; height:auto;">
+                    <fieldset style="width: 94%;">
+                        <legend style="margin-bottom:10px;">管理员列表</legend>
+                        <table style="width: 100%; border: 1px solid #b2b2b2">
+                            <thead class="adminlist"></thead>
+
+                        </table>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--<tr>-->
+<!--<th scope="col">序号</th>-->
+<!--<th scope="col">账号</th>-->
+<!--<th scope="col">用户名</th>-->
+<!--<th scope="col">权限</th>-->
+<!--<th scope="col">操作</th>-->
+<!--<th scope="col">删除</th>-->
+<!--</tr>-->
+<!--<c:forEach items="${adminlist}" var="a">-->
+<!--<tr>-->
+<!--<td align="center">${a.id}</td>-->
+<!--<td align="center">${a.account}</td>-->
+<!--<td align="center">${a.username}</td>-->
+<!--<td align="center">${a.powerinfo}</td>-->
+<!--<td align="center">-->
+<!--<c:if test="${a.power==40001}">-->
+<!--<a href="/adminpower?iaccount=<c:out value="${a.account}&ipower=40002"/>" onClick="return confirm('您确认要将其设为普通管理员？')">设为普通管理员</a>-->
+<!--</c:if>-->
+<!--<c:if test="${a.power==40002}">-->
+<!--<a href="/adminpower?iaccount=<c:out value="${a.account}&ipower=40001"/>" onClick="return confirm('您确认要将其设为超级管理员？')">设为超级管理员</a>-->
+<!--</c:if>-->
+<!--</td>-->
+<!--<td align="center">-->
+<!--<a href="/adddelete?account=<c:out value="${a.account}"/>" onClick="return confirm('您确认要删除吗？')">删除</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--</c:forEach>-->
+
+

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> 设置</title>
+<script src="https://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
+<link href="https://cdn.bootcss.com/prettify/r298/prettify.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<div id="wmd-preview" class="wmd-preview">
+<h1><a href="index.html">《首页</a>  设置:</h1>
+<ul class="toc">
+<li><a href="#系统设置_校园网介绍更改">系统设置_校园网介绍更改</a></li><li><a href="#系统设置_校园网申请须知更改">系统设置_校园网申请须知更改</a></li><li><a href="#系统设置_维修申请须知更改">系统设置_维修申请须知更改</a></li><li><a href="#系统设置_用户组删除">系统设置_用户组删除</a></li><li><a href="#系统设置_用户组添加">系统设置_用户组添加</a></li><li><a href="#系统设置_地址删除">系统设置_地址删除</a></li><li><a href="#系统设置_地址添加">系统设置_地址添加</a></li><li><a href="#系统设置_业务类型删除">系统设置_业务类型删除</a></li><li><a href="#系统设置_业务类型增加">系统设置_业务类型增加</a></li><li><a href="#系统设置_业务类型更改">系统设置_业务类型更改</a></li><li><a href="#系统设置_学生信息清除">系统设置_学生信息清除</a></li><li><a href="#管理员添加">管理员添加</a></li><li><a href="#管理员删除">管理员删除</a></li><li><a href="#管理员权限更改">管理员权限更改</a></li><li><a href="#个人设置_用户名更改">个人设置_用户名更改</a></li><li><a href="#个人设置_密码更改">个人设置_密码更改</a></li>
+</ul>
+<hr>
+<h2 id="系统设置_校园网介绍更改">系统设置_校园网介绍更改</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /infor/intro
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_校园网申请须知更改">系统设置_校园网申请须知更改</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /infor/apply
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_维修申请须知更改">系统设置_维修申请须知更改</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /infor/maintain
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_用户组删除">系统设置_用户组删除</h2>
+
+<pre class="prettyprint lang-json">
+method：DELETE
+url: /ugdel
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_用户组添加">系统设置_用户组添加</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /ugadd
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_地址删除">系统设置_地址删除</h2>
+
+<pre class="prettyprint lang-json">
+method：DELETE
+url: /addel
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_地址添加">系统设置_地址添加</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /adadd
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_业务类型删除">系统设置_业务类型删除</h2>
+
+<pre class="prettyprint lang-json">
+method：DELETE
+url: /btdel
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_业务类型增加">系统设置_业务类型增加</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /btadd
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_业务类型更改">系统设置_业务类型更改</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /btupdate
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="系统设置_学生信息清除">系统设置_学生信息清除</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /identity/clear
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="管理员添加">管理员添加</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /admin/add
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="管理员删除">管理员删除</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /admin/del
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="管理员权限更改">管理员权限更改</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /admin/update/power
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="个人设置_用户名更改">个人设置_用户名更改</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /admin/update/adminname
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr><h2 id="个人设置_密码更改">个人设置_密码更改</h2>
+
+<pre class="prettyprint lang-json">
+method：POST
+url: /admin/update/password
+</pre>
+
+<p><strong>参数列表</strong></p>
+
+<table><tr><th>参数名</th><th>类型</th><th>必需</th><th>描述</th></tr></table>
+
+<p>返回结果: <a href="javaCodes/SysUserVo.html">Android Code</a> | <a href="iosCodes/SysUserVo.html">IOS Code</a></p>
+
+<pre class="prettyprint lang-json">
+{
+  "id": "int //id",
+  "username": "string //用户账号",
+  "password": "string //密码"
+}
+</pre>
+
+<hr>
+</div>
+</body>
+</html>

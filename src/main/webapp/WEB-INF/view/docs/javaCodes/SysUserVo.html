@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SysUserVo</title>
+<script src="https://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
+<link href="https://cdn.bootcss.com/prettify/r298/prettify.min.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint lang-java">
+public class SysUserVo implements Serializable{
+
+    private int id; //id
+    private String username; //用户账号
+    private String password; //密码
+
+    @JSONField(name="id")
+    public int getId(){
+        return id;
+    }
+
+    @JSONField(name="id")
+    public void setId(int id){
+        this.id = id;
+    }
+
+    @JSONField(name="username")
+    public String getUsername(){
+        return username;
+    }
+
+    @JSONField(name="username")
+    public void setUsername(String username){
+        this.username = username;
+    }
+
+    @JSONField(name="password")
+    public String getPassword(){
+        return password;
+    }
+
+    @JSONField(name="password")
+    public void setPassword(String password){
+        this.password = password;
+    }
+
+}
+</pre>
+
+
+
+</body>
+</html>

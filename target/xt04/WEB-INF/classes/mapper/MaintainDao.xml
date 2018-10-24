@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xt01.dao.MaintainDao">
+
+    <insert id="Add">
+        <!--ignore 主键冲突，报错-->
+        insert
+               ignore
+        into
+               maintain(username,account,callnum,campus,address,content,mttime)
+        values
+               (#{username},#{account},#{callnum},#{campus},#{address},#{content},#{date})
+    </insert>
+
+    <resultMap id="MaintainResult" type="com.xt01.entity.Maintain">
+        <id property="mid" column="mid" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="account" column="account" jdbcType="VARCHAR"/>
+        <result property="callnum" column="callnum" jdbcType="INTEGER"/>
+        <result property="campus" column="campus" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="date" column="mttime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="queryAll" resultMap="MaintainResult" resultType="com.xt01.entity.Maintain">
+        select
+               username,account,callnum,campus,address,content,mttime
+        from
+               maintain
+    </select>
+
+    <select id="queryByToday" resultMap="MaintainResult" resultType="com.xt01.entity.Maintain">
+        select
+               username,account,callnum,campus,address,content,mttime
+        from
+               maintain
+        where
+               DATE_FORMAT(mttime,'%Y-%m-%d') = DATE_FORMAT(#{today},'%Y-%m-%d')
+    </select>
+
+    <select id="queryByDate" resultMap="MaintainResult" resultType="com.xt01.entity.Maintain">
+        select
+            username,account,callnum,campus,address,content,mttime
+        from
+            maintain
+        where
+            DATE_FORMAT(mttime,'%Y-%m-%d %H:%i') between DATE_FORMAT(#{start},'%Y-%m-%d %H:%i') and DATE_FORMAT(#{end},'%Y-%m-%d %H:%i')
+    </select>
+
+    <select id="queryAllMaintainByPage" resultMap="MaintainResult" resultType="com.xt01.entity.Maintain">
+        select
+            username,account,callnum,campus,address,content,mttime
+        from
+            maintain
+        limit
+            #{startpage},#{pagecount}
+    </select>
+
+    <select id="queryTodayByPage" resultMap="MaintainResult" resultType="com.xt01.entity.Maintain">
+        select
+            username,account,callnum,campus,address,content,mttime
+        from
+            maintain
+        where
+            DATE_FORMAT(mttime,'%Y-%m-%d') = DATE_FORMAT(#{today},'%Y-%m-%d')
+        limit
+            #{startpage},#{pagecount}
+    </select>
+
+    <!--List<Maintain> queryByPage(int page);-->
+    <select id="queryByPage" resultMap="MaintainResult" resultType="com.xt01.entity.Maintain">
+        select
+            username,account,callnum,campus,address,content,mttime
+        from
+            maintain
+        limit
+            #{page},#{count}
+    </select>
+
+    <!--int queryCount()-->
+    <select id="queryCount" resultType="java.lang.Integer">
+        select count(*) from maintain
+    </select>
+
+    <!--List<Maintain> queryToByPage(int page);-->
+    <select id="queryToByPage" resultMap="MaintainResult" resultType="com.xt01.entity.Maintain">
+        select
+            username,account,callnum,campus,address,content,mttime
+        from
+            maintain
+        where
+            DATE_FORMAT(mttime,'%Y-%m-%d') = DATE_FORMAT(#{today},'%Y-%m-%d')
+        limit
+            #{page},#{count}
+    </select>
+
+    <!--int queryToCount()-->
+    <select id="queryToCount" resultType="java.lang.Integer">
+        select
+            count(*)
+        from
+            maintain
+        where
+            DATE_FORMAT(mttime,'%Y-%m-%d') = DATE_FORMAT(#{today},'%Y-%m-%d')
+    </select>
+
+</mapper>

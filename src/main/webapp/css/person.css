@@ -1,0 +1,25 @@
+body{
+    margin:0px;
+    /*background-image: linear-gradient(to top,#B5D7AF,#FFFFFF);*/
+    background-color: #B5D7AF;
+}
+
+.frame{
+    margin: 20px auto 20px auto;
+    width: 94%;
+    height: auto;
+    border-radius: 10px;
+    background:rgba(255, 255, 255, 0.5);
+}
+
+.next_btn{
+    margin: 20px auto 10px auto;
+    width: 60%;
+    height: 40px;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: white;
+    color: #B5D7AF;
+    font-weight: 700;
+    font-size: 20px;
+}

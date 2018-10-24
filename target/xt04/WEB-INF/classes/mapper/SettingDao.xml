@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xt01.dao.SettingDao">
+
+    <resultMap id="UGResultMap" type="com.xt01.result.Setting.UGResult">
+        <id property="i" column="id" jdbcType="INTEGER"/>
+        <result property="s" column="usergroup" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="UGAdd" parameterType="java.lang.String">
+        insert ignore into usergroup(usergroup) values (#{ugname})
+    </insert>
+
+    <delete id="UGDelete" parameterType="java.lang.Integer">
+        delete from usergroup where id = #{id}
+    </delete>
+
+    <select id="UGList" resultMap="UGResultMap" parameterType="com.xt01.result.Setting.UGResult">
+        select id,usergroup from usergroup
+    </select>
+
+
+    <resultMap id="ADResultMap" type="com.xt01.result.Setting.ADResult">
+        <id property="i" column="id" jdbcType="INTEGER"/>
+        <result property="build" column="build" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="ADAdd">
+        insert ignore into build (build) values (#{build})
+    </insert>
+
+    <delete id="ADDelete" parameterType="java.lang.Integer">
+        delete from build where id = #{id}
+    </delete>
+
+    <select id="ADList" resultMap="ADResultMap" parameterType="com.xt01.result.Setting.ADResult">
+        select id,build from build
+    </select>
+
+
+    <parameterMap id="BTOperateMap" type="com.xt01.result.Setting.BTResult">
+        <parameter property="bst" jdbcType="VARCHAR"/>
+        <parameter property="mprice" jdbcType="DECIMAL"/>
+        <parameter property="qprice" jdbcType="DECIMAL"/>
+        <parameter property="sprice" jdbcType="DECIMAL"/>
+        <parameter property="yprice" jdbcType="DECIMAL"/>
+        <parameter property="remark" jdbcType="VARCHAR"/>
+    </parameterMap>
+
+    <insert id="BTAdd" parameterMap="BTOperateMap">
+        insert ignore into
+               business(bst,monthprice,quartprice,semeprice,yearprice,remarks)
+        values
+               (#{bst},#{mprice},#{qprice},#{sprice},#{yprice},#{remark})
+    </insert>
+
+    <update id="BTUpdate" parameterMap="BTOperateMap">
+        update
+               business
+        set
+               monthprice = #{mprice},
+               quartprice = #{qprice},
+               semeprice = #{sprice},
+               yearprice = #{yprice},
+               remarks = #{remark}
+        where
+               bst like #{bst}
+    </update>
+
+    <delete id="BTDelete" parameterType="java.lang.Integer">
+        delete from business where id = #{id}
+    </delete>
+
+    <resultMap id="BTResultMap" type="com.xt01.result.Setting.BTResult">
+        <id property="i" column="id" jdbcType="INTEGER"/>
+        <result property="bst" column="bst" jdbcType="VARCHAR"/>
+        <result property="mprice" column="monthprice" jdbcType="DECIMAL"/>
+        <result property="qprice" column="quartprice" jdbcType="DECIMAL"/>
+        <result property="sprice" column="semeprice" jdbcType="DECIMAL"/>
+        <result property="yprice" column="yearprice" jdbcType="DECIMAL"/>
+        <result property="remark" column="remarks" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="BTList" resultMap="BTResultMap">
+        select id,bst,monthprice,quartprice,semeprice,yearprice,remarks from business
+    </select>
+
+    <select id="BTgetByBst" resultMap="BTResultMap" parameterType="java.lang.String">
+        select id,bst,monthprice,quartprice,semeprice,yearprice,remarks from business where bst = #{bst}
+    </select>
+
+    <select id="getApplyInfor" resultType="java.lang.String">
+        select message from information where name like "apply"
+    </select>
+
+    <select id="getMaintainInfor" resultType="java.lang.String">
+        select message from information where name like "maintain"
+    </select>
+
+    <select id="getIntro" resultType="java.lang.String">
+        select message from information where name like "intro"
+    </select>
+
+    <update id="setApplyinfor" parameterType="java.lang.String">
+        update information set message = #{ainfor} where name like "apply"
+    </update>
+
+    <update id="setMaintaininfor" parameterType="java.lang.String">
+        update information set message = #{minfor} where name like "maintain"
+    </update>
+
+    <update id="setIntro" parameterType="java.lang.String">
+        update information set message = #{intro} where name like "intro"
+    </update>
+
+</mapper>
